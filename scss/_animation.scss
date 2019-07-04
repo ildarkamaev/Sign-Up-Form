@@ -1,0 +1,36 @@
+/* Move Sign In to right*/
+
+.container.right-panel-active .sign-in-container {
+    transform: translateX(100%);
+}
+
+
+/* Move overlay to left*/
+
+.container.container.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
+
+
+/*bring sign up over sign in*/
+
+.container.container.right-panel-active .signup-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+}
+
+
+/* Move overlay back to right*/
+
+.container.container.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+.container.container.right-panel-active .overlay-left {
+    transform: translateX(0);
+}
+
+.container.container.right-panel-active .overlay-right {
+    transform: translateX(20%);
+}

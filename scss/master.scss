@@ -1,0 +1,139 @@
+@import 'base';
+@import 'vars';
+@import 'mixins';
+@import 'typography';
+@import 'animation';
+body {
+    background: $white_dark;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: $white_base;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+    position: relative;
+    overflow: hidden;
+    width: 60rem;
+    max-width: calc(100vh-2rem);
+    min-height: 34rem;
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.5s ease-in-out;
+    .sign-in-container {
+        display: flex;
+        justify-content: center;
+        left: 0;
+        width: 50%;
+        z-index: 2;
+    }
+    .signup-container {
+        display: flex;
+        justify-content: center;
+        left: 0;
+        width: 50%;
+        opacity: 0;
+        z-index: 1;
+    }
+    .social-container {
+        margin: 2rem 0;
+        a {
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 0.5rem;
+            height: 3rem;
+            width: 3rem;
+            transition: all 0.2s ease-in;
+            &:hover {
+                border-color: $orange;
+                color: $white_base;
+            }
+        }
+    }
+    form {
+        background: $white_base;
+        display: flex;
+        flex-direction: column;
+        padding: 0 6.5rem;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        input {
+            all: unset;
+            background: #eee;
+            padding: 1rem 2rem;
+            margin: 0.8rem 0;
+            width: 100%;
+            text-align: left;
+        }
+        button {
+            @include btn(#ff4b2b, #ff4b2b);
+        }
+    }
+}
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
+    z-index: 100;
+    .overlay {
+        background: #ff416c;
+        background: linear-gradient(to right, #ff4b2b, #ff416c) no-repeat 0 0 / cover;
+        color: $white_base;
+        position: relative;
+        left: -100%;
+        height: 100%;
+        width: 200%;
+        transform: translateX(0);
+        transition: transform 0.5s ease-in-out;
+        .overlay-panel {
+            position: absolute;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0 2rem;
+            height: 100%;
+            width: 50%;
+            text-align: center;
+            transform: translateX(0);
+            transition: transform 0.5s ease-in-out;
+        }
+        .overlay-left {
+            transform: translateX(-20%);
+        }
+        .overlay-right {
+            right: 0;
+            transform: translateX(0);
+        }
+    }
+}
+
+.ghost {
+    @include btn(transparent, $white_base);
+    transition: all 0.2s ease-in;
+    &:hover {
+        background: $white_base;
+        color: $black;
+    }
+}
+
+// Animation

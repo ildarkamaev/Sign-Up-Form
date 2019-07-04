@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Sign Up/In Form
+        script(src="https://kit.fontawesome.com/b639b9baf8.js")
+        link(rel="stylesheet", href="../css/master.css")
+    body
+    
+        .container#container
+            .form-container.signup-container
+                 form(action='#')
+                    h1 Create Account               
+                    .social-container
+                        a(href='#' class="social ")
+                            i(class='fab fa-facebook-f')
+                        a(href='#' class="social ")
+                            i(class='fab fa-google-plus-g')
+                        a(href='#' class="social ")
+                            i(class='fab fa-linkedin-in')
+                    span Or use Form for registration
+                    input(type="text" placeholder="name")
+                    input(type="email" placeholder="e-mail")
+                    input(type="password" placeholder="password")
+                    button Sign Up
+            .form-container.sign-in-container
+                form(action="#")
+                    h1 Sign In
+                    .social-container
+                        a(href='#' class="social ")
+                            i(class='fab fa-facebook-f')
+                        a(href='#' class="social ")
+                            i(class='fab fa-google-plus-g')
+                        a(href='#' class="social ")
+                            i(class='fab fa-linkedin-in')
+                    span Or use your account
+                    input(type="email" placeholder="e-mail")
+                    input(type="password" placeholder="password")
+                    button Sign In    
+            
+            .overlay-container
+                .overlay
+                    .overlay-panel.overlay-left
+                        h1 Welcome Back
+                        p.
+                            To keep connected with us please log in.
+                        button(class="ghost" id="signIn") Sign In
+                    .overlay-panel.overlay-right
+                        h1 Hello my friend!
+                        p.
+                            Create an account and start your journey with us
+                        button(class="ghost" id="signUp") Sign up
+    
+        script(src="app.js")
